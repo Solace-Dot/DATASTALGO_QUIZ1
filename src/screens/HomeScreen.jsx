@@ -7,8 +7,6 @@ function HomeScreen() {
   return (
     <Container>
       <h1>KAMIR & EAT</h1>
-
-      <h1>About us</h1>
       <Row>
         {products.map((product) => (
           <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
