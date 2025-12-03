@@ -21,7 +21,7 @@ function Product({ product }) {
         </Link>
 
         <div className="mt-auto">
-          <Card.Text as="h3">${product.price}</Card.Text>
+          <Card.Text as="h3">₱{product.price}</Card.Text>
         </div>
       </Card.Body>
     </Card>
