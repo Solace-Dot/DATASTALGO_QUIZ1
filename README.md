@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+**Project README — Kamir (Frontend)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **Project**: `frontend` — React single-page application built with Create React App.
+- **Purpose**: A simple product-listing site for the startup "Kamir".
 
-## Available Scripts
+**Background**
 
-In the project directory, you can run:
+- **Client / Startup**: Kamir.
+- **Status**: Kamir does not currently have an official website; the client was discovered on a Facebook page and this repository is the first web presence created for them. This is not a rehaul of an existing site.
+- **Reference / Source**: Found on Facebook (client-provided social listing). No live website URL was provided at the time of creation.
 
-### `npm start`
+**Why this project exists**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Kamir lacked a dedicated web page to list products and provide a basic brand presence. The goal of this frontend is to create a minimal, responsive storefront that showcases products and provides product detail pages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Routes Included & What Each Page Does**
 
-### `npm test`
+- **`/` — Home / Product listing**: Implements `HomeScreen.jsx`. Shows a grid/list of products with images, names, and prices. Users can click a product to view details.
+- **`/product/:id` — Product detail**: Implements `ProductScreen.jsx`. Displays full details for a single product (image, name, price, description) and any available actions (e.g., view more details).
+- **`/about` — About**: Implements `AboutScreen.jsx`. Provides background information about Kamir and contact / social references.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Files/screens that map to routes:
 
-### `npm run build`
+- `src/screens/HomeScreen.jsx` — Home listing view.
+- `src/screens/ProductScreen.jsx` — Individual product details view.
+- `src/screens/AboutScreen.jsx` — About / info page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Important components used across routes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/components/header.jsx` — Header / navigation component used across pages.
+- `src/components/Footer.jsx` — Footer component.
+- `src/components/Product.jsx` — Product card used in the product listing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Project Structure (relevant files)**
 
-### `npm run eject`
+- `src/index.js` — App entry, router setup.
+- `src/App.js` — Application shell, route definitions.
+- `src/products.js` — Product sample data used by the frontend.
+- `src/components/Product.jsx` — Product card component.
+- `public/` — Static public files and `index.html`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Tech Stack & Key Dependencies**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Framework**: React (via Create React App).
+- **Routing**: `react-router-dom` (project uses route-based screens).
+- **UI Components**: `react-bootstrap`, `react-router-bootstrap`.
+- **Other**: `font-awesome` for icons, `web-vitals` and React testing libraries for test scaffolding.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Main dependencies (from `package.json`):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `react` ^19.x
+- `react-dom` ^19.x
+- `react-router-dom` ^7.x
+- `react-bootstrap` ^2.x
+- `react-router-bootstrap` ^0.26.x
+- `font-awesome` ^4.7.0
 
-## Learn More
+**How to Run (Windows PowerShell)**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Before installing dependencies you need to clone the repository to your machine. Replace the example URL and folder name with your repository's values.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo and change into the `frontend` folder (GitLab example):
 
-### Code Splitting
+```powershell
+git clone https://gitlab.com/<your-username>/<your-repo>.git
+cd <your-repo>\frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Tip: on GitLab use the project's **HTTPS** clone URL (click the blue "Clone" button on your project page) and paste it into the `git clone` command above.
 
-### Analyzing the Bundle Size
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```powershell
+npm install
+```
 
-### Making a Progressive Web App
+3. Run the development server (opens at `http://localhost:3000`):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```powershell
+npm start
+```
 
-### Advanced Configuration
+4. Create a production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```powershell
+npm run build
+```
 
-### Deployment
+5. Run tests (CRA test runner):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```powershell
+npm test
+```
 
-### `npm run build` fails to minify
+**How the UI flows**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Users land on the Home page (`/`) where `HomeScreen` renders a grid of `Product` components using sample data from `src/products.js`.
+- Clicking a product card navigates to `/product/:id` where `ProductScreen` reads the `id` param and displays the corresponding product details.
+- The `header.jsx` component provides navigation links to Home and About pages. `Footer.jsx` provides site footer info.
+
+**Notes & Next Steps**
+
+- This project uses local/sample product data in `src/products.js`. For production, integrate a backend API (e.g., REST endpoints) and fetch product data dynamically.
+- Add contact details or a direct link to the Kamir Facebook page if the client provides it.
+- Consider adding a shopping cart and persistent state if required in future iterations.
+
+**Contact / Reference**
+
+- Client discovery: Kamir was found on Facebook (no official website provided). If you have the Facebook URL or other references, add them here.
+
+---
