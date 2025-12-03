@@ -1,96 +1,75 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
+
 function AboutScreen() {
   return (
     <div>
-      <Container>
-        <Row>
-          <Col className="text-center py-3">
-            <section class="about-us-header">
+      <div className="about-us-header" style={{ background: "#f7931e" }}>
+        <Container>
+          <Row>
+            <Col className="text-center">
               <h1>Kamir Authentic Shawarma</h1>
-              <br></br>
-              <br></br>
               <h2>The Kamir Story: Where Tradition Meets Taste</h2>
-              <br></br>
-              <br></br>
-              <h4>
-                Welcome to Kamir, the home of authentic, handcrafted shawarma.
-                Our name, which means 'The King,' reflects our commitment to
-                delivering a truly royal experience—from the quality of our
-                ingredients to the precision of our preparation.
-              </h4>
-              <br></br>
-              <br></br>
-            </section>
+              <p style={{ maxWidth: 800, margin: "0.75rem auto 0" }}>
+                Welcome to Kamir — the home of handcrafted shawarma. Our name,
+                which means "The King," reflects our commitment to delivering a
+                truly royal experience: premium ingredients, careful
+                preparation, and flavors rooted in tradition.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
 
-            <section class="mission">
-              <h2>Our Mission: Redefining Authentic</h2>
-              <br></br>
-              <br></br>
-              <h4>
-                Our mission is simple: to bring the authentic, rich flavors of
-                traditional Middle Eastern Shawarma to our community. We believe
-                the best food is made with passion, respect for tradition, and
-                absolutely no compromise on quality. Forget fast food; this is
-                Slow Food, perfected over centuries.
-              </h4>
+      <Container className="py-4">
+        <Row>
+          <Col>
+            <section className="about-section">
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is simple: bring the authentic, rich flavors of
+                traditional Middle Eastern shawarma to our community. We value
+                slow, careful cooking methods and never compromise on quality.
+              </p>
 
-              <br></br>
-              <br></br>
-            </section>
+              <div className="pillars">
+                <h3>Our Three Pillars</h3>
+                <Row>
+                  <Col xs={12} md={4} className="pillar">
+                    <h4>1. Marination</h4>
+                    <p>
+                      Premium chicken and beef are hand-cut and marinated for 24
+                      hours in a family blend of spices to achieve deep, lasting
+                      flavor.
+                    </p>
+                  </Col>
 
-            <section class="pillars">
-              <h2>Our Three Royal Pillars of Quality</h2>
-              <br></br>
-              <br></br>
-              <article class="pillar-marination">
-                <h2>1. The Art of Marination</h2>\<br></br>
-                <h4>
-                  Our premium Chicken and Beef are carefully hand-cut and bathed
-                  for a full 24 hours in a secret, family-crafted blend of over
-                  a dozen spices. This slow, deep infusion is the secret to the
-                  incredibly tender and flavorful core of every Kamir dish.
-                </h4>
-                <br></br>
-                <br></br>
-              </article>
+                  <Col xs={12} md={4} className="pillar">
+                    <h4>2. Spit-Roast</h4>
+                    <p>
+                      We use a vertical rotisserie to develop a crispy,
+                      caramelized exterior while keeping the inside juicy and
+                      tender.
+                    </p>
+                  </Col>
 
-              <article class="pillar-roast">
-                <h2>2. The Spit-Roast Tradition</h2>
-                <br></br>
-                <h4>
-                  We use the classic vertical rotisserie spit—the only way to
-                  achieve true shawarma texture. The meat is slowly roasted
-                  throughout the day, ensuring a crispy, caramelized outer layer
-                  and a tender, juicy interior that is sliced fresh to order.
-                </h4>
-                <br></br>
-                <br></br>
-              </article>
+                  <Col xs={12} md={4} className="pillar">
+                    <h4>3. Freshness</h4>
+                    <p>
+                      Everything is made fresh daily — from hummus and tahini to
+                      our hand-baked pita — ensuring the best possible taste.
+                    </p>
+                  </Col>
+                </Row>
+              </div>
 
-              <article class="pillar-freshness">
-                <h3>3. Handcrafted Freshness</h3>
-                <br></br>
-                <h4>
-                  Everything is made fresh, in-house, daily: from our signature
-                  creamy, garlicky Hummus and tangy Tahini, to our freshly baked
-                  pita bread.
-                </h4>
-                <br></br>
-                <br></br>
-              </article>
-            </section>
-
-            <section class="cta">
-              <h2>Experience The Royal Menu</h2>
-              <br></br>
-              <h4>
-                We invite you to explore our menu, featuring wraps scaled for
-                every appetite, from the quick Kamir Jr to our satisfying Kamir
-                King.
-              </h4>
-              <br></br>
-              <br></br>
+              <div className="cta">
+                <h4>Experience the Royal Menu</h4>
+                <p>
+                  Explore our menu — from the quick Kamir Jr to the satisfying
+                  Kamir King, we have sizes and combos for every appetite.
+                </p>
+              </div>
             </section>
           </Col>
         </Row>

@@ -8,9 +8,9 @@ import AboutScreen from "./screens/AboutScreen";
 import ProductScreen from "./screens/ProductScreen";
 function App() {
   return (
-    <>
+    <div className="app">
       <Header />
-      <main className="py-3">
+      <main className="py-3 app-main">
         <Container>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
@@ -20,7 +20,7 @@ function App() {
         </Container>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
