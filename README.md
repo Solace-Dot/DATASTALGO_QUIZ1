@@ -1,7 +1,7 @@
 **Project README — Kamir (Frontend)**
 
 - **Project**: `frontend` — React single-page application built with Create React App.
-- **Purpose**: A simple product-listing site for the startup "Kamir".
+- **Purpose**: A simple product-listing site for the Business "Kamir".
 
 **Background**
 
