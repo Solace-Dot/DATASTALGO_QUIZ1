@@ -1,28 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-
-import productsData from "../products";
+import axios from "axios";
 
 function ProductScreen() {
   const { id } = useParams();
-
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const foundProduct = productsData.find((p) => p._id === id);
+    const fetchProduct = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/${id}/`);
+        if (data.image) {
+          data.image = `http://127.0.0.1:8000${data.image}`;
+        }
+        setProduct(data);
+        document.title = data.name;
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+        setLoading(false);
+      }
+    };
 
-    if (foundProduct) {
-      setProduct(foundProduct);
-      document.title = foundProduct.name;
-    } else {
-      console.error(`Product with ID ${id} not found.`);
-      setProduct(null);
-    }
+    fetchProduct();
   }, [id]);
 
-  if (!product) {
+  if (loading) {
     return <div>Loading product details...</div>;
+  }
+
+  if (!product) {
+    return <div>Product not found</div>;
   }
 
   return (
